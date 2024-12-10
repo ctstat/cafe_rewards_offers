@@ -21,7 +21,19 @@ CREATE TABLE IF NOT EXISTS events(
     value TEXT,
     time INT
 );
+-----------------------------------------------------------------------
+-- import csv files
+COPY offers 
+FROM  'C:/Users/ctsta/Desktop/cafe_rewards_offers/offers.csv'
+WITH (FORMAT CSV, HEADER TRUE)
 
+COPY customers 
+FROM  'C:/Users/ctsta/Desktop/cafe_rewards_offers/customers.csv'
+WITH (FORMAT CSV, HEADER TRUE)
+
+COPY events 
+FROM  'C:/Users/ctsta/Desktop/cafe_rewards_offers/events.csv'
+WITH (FORMAT CSV, HEADER TRUE)
 
 
 
