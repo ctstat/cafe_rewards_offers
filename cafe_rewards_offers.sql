@@ -35,6 +35,18 @@ COPY events
 FROM  'C:/Users/ctsta/Desktop/cafe_rewards_offers/events.csv'
 WITH (FORMAT CSV, HEADER TRUE)
 
+-- check import files
+SELECT * 
+FROM offers
+LIMIT 3;
+
+SELECT * 
+FROM customers
+LIMIT 3;
+
+SELECT * 
+FROM events
+LIMIT 3;
 
 
 
