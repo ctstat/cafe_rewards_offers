@@ -48,6 +48,24 @@ SELECT *
 FROM events
 LIMIT 3;
 
+--------------------------------------------------------------------------
+-- unlist a column
+SELECT DISTINCT channels
+FROM offers;
+
+-- create a duplicated table
+SELECT *
+INTO offer2
+FROM offers
+
+-- create empty columns (NULL) for each channel
+SELECT * 
+    , NULL AS web
+    , NULL AS email
+    , NULL AS mobile
+    , NULL AS social
+FROM offer2
+
 
 
 
