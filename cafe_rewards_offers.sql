@@ -64,13 +64,6 @@ SELECT *
 INTO offer2
 FROM offers
 
--- create empty columns (NULL) for each channel
-SELECT * 
-    , NULL AS web
-    , NULL AS email
-    , NULL AS mobile
-    , NULL AS social
-FROM offer2
 
 
 
