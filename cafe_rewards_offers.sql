@@ -64,12 +64,9 @@ SELECT *
 INTO offer2
 FROM offers
 
-<<<<<<< HEAD
-=======
 
 SELECT *
 FROM offer2
->>>>>>> cafe2
 
 -- create channel group
 SELECT channels, 
