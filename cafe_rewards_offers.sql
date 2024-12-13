@@ -67,13 +67,35 @@ SELECT *
 FROM offer2
 
 
+-- a testing table
+CREATE TABLE IF NOT EXISTS testing(
+    id INT,
+    items TEXT
+);
+
+INSERT INTO testing (id, items)
+VALUES
+    (1, '["A", "B"]'),
+    (2, '["A", "B", "C"]'),
+    (3, '["A", "C"]')
+
+SELECT *
+FROM testing
 
 
+CREATE TABLE IF NOT EXISTS testing2(
+    id INT,
+    items TEXT,
+    A INT,
+    B INT,
+    C INT
+);
 
-
-
-
-
+INSERT INTO testing (id, items, A, B, C)
+VALUES
+    (1, '["A", "B"]', 1, 0, 1),
+    (2, '["A", "B", "C"]', 1, 1, 1),
+    (3, '["A", "C"]', 1, 1, 0)
 
 
 
