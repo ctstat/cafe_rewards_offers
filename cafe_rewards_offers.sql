@@ -64,12 +64,39 @@ SELECT *
 INTO offer2
 FROM offers
 
+<<<<<<< HEAD
+=======
 
+SELECT *
+FROM offer2
+>>>>>>> cafe2
 
+-- create channel group
+SELECT channels, 
+CASE WHEN (web = 1 AND email = 1 and mobile = 1 and social = 1) THEN 1
+     WHEN (web = 1 AND email = 1 and mobile = 1) THEN 2
+     WHEN (email = 1 and mobile = 1 and social = 1) THEN 3
+     ELSE 4 END AS channel_group
+FROM offer2
 
+-- update the customer table
+SELECT * 
+INTO customer2
+FROM customers
 
+-- calculate median
+SELECT 
+  PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY income) AS median
+FROM
+  customer2
 
+-- replace income missing value with median
+UPDATE customer2
+SET income = (SELECT 
+              PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY income) AS median
+              FROM customer2)
+WHERE income IS NULL;
 
-
-
+SELECT *
+FROM customer2
 
