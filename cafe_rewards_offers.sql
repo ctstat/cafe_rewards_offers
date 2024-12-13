@@ -96,4 +96,3 @@ WHERE income IS NULL;
 
 SELECT *
 FROM customer2
-
