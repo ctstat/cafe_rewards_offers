@@ -4,7 +4,12 @@ CREATE TABLE IF NOT EXISTS offers(
     difficulty INT,
     reward INT,
     duration INT,
-    channels TEXT
+    channels TEXT,
+    num_channels INT,
+    email INT,
+    mobile INT,
+    social INT,
+    web INT
 );
 
 CREATE TABLE IF NOT EXISTS customers(
@@ -21,10 +26,11 @@ CREATE TABLE IF NOT EXISTS events(
     value TEXT,
     time INT
 );
+
 -----------------------------------------------------------------------
 -- import csv files
 COPY offers 
-FROM  'C:/Users/ctsta/Desktop/cafe_rewards_offers/offers.csv'
+FROM  'C:/Users/ctsta/Desktop/cafe_rewards_offers/clean_offers.csv'
 WITH (FORMAT CSV, HEADER TRUE)
 
 COPY customers 
